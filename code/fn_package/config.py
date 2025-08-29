@@ -1,0 +1,34 @@
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+# LOGGING
+ENABLE_LOGGING = os.getenv("ENABLE_LOGGING", "true").lower() == "true"
+LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO").upper()
+
+# API KEYS
+OPENAI_API_KEY=os.getenv("OPENAI_API_KEY")
+
+# DEFAULTS
+
+## RAG
+DEFAULT_RAG_TOP_K = int(os.getenv("DEFAULT_RAG_TOP_K", "5"))
+DEFAULT_RAG_THRESHOLD = float(os.getenv("DEFAULT_RAG_THRESHOLD", "0.75"))
+DEFAULT_CHUNK_SIZE = int(os.getenv("DEFAULT_CHUNK_SIZE", "200"))
+DEFAULT_CHUNK_OVERLAP = int(os.getenv("DEFAULT_CHUNK_OVERLAP", "50"))
+DEFAULT_EMBED_MODEL = os.getenv("DEFAULT_EMBED_MODEL", "text-embedding-ada-002")
+DEFAULT_EMBED_DIM = int(os.getenv("DEFAULT_EMBED_DIM", "1536"))
+
+## MEMORY RETRIEVAL
+DEFAULT_MEMORY_RECENCY_WEIGHT = float(os.getenv("DEFAULT_MEMORY_RECENCY_WEIGHT", "0.1"))
+DEFAULT_MEMORY_IMPORTANCE_WEIGHT = float(os.getenv("DEFAULT_MEMORY_IMPORTANCE_WEIGHT", "0.1"))
+MEMORY_CSV_PATH = os.getenv("MEMORY_CSV_PATH", "memory/memory.csv")
+DEFAULT_MEMORY_TOP_K = int(os.getenv("DEFAULT_MEMORY_TOP_K", "5"))
+DEFAULT_MEMORY_THRESHOLD = float(os.getenv("DEFAULT_MEMORY_THRESHOLD", "0.5"))
+
+## LLM
+DEFAULT_LLM_MODEL = os.getenv("DEFAULT_LLM_MODEL", "gpt-4")
+
+# CodeSession
+DEFAULT_CODE_SESSION_FOLDER = os.getenv("DEFAULT_CODE_SESSION_FOLDER")

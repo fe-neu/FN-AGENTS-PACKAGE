@@ -1,0 +1,17 @@
+name: dhbw-ml-env
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - numpy
+  - pandas
+  - openai
+  - jupyter
+  - ipykernel
+  - pip
+  - matplotlib
+  - pip:
+      - python-dotenv
+      - tiktoken
+      - pypdf
